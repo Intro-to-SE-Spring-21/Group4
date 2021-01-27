@@ -11,8 +11,8 @@ Justin Russell (justin-russell)
 Lucas Roberts (lpr70)
 
 # Languages and Techniques
-C++
-
+C++ (possibly) 
+Python 
 Django
 
 # Core Feature
