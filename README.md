@@ -12,7 +12,9 @@ Lucas Roberts (lpr70)
 
 # Languages and Techniques
 C++ (possibly) 
+
 Python 
+
 Django
 
 # Core Feature
