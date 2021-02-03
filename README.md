@@ -1,5 +1,5 @@
-# Group4
-Group 4's repository
+# Description
+Our group is aiming to design a social media platform similiar to Twitter. Our social media platform is called Tweeter.
 
 # Members and Respective GitHub Usernames
 Meng Xiang Chen (mcPython04)
@@ -18,10 +18,10 @@ Python
 Django
 
 # Core Feature
-Posting Tweets
+A user can post a "tweet."
 
-"Like" a tweet
+A user can like a "tweet."
 
-Follow a user
+A user can follow another user.
 
-User Login
+A user can login or register.
