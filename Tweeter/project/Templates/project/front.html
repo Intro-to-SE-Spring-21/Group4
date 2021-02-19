@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tweeter</title>
+</head>
+<body style="background-color:#1DA1F2;">
+
+    <h1 style="color: white; font-size: 60px;"><center>Tweeter</center></h1>
+    <div>
+        <center>
+        <table>
+            <tr>
+                <td>
+                    <a href="{% url 'login' %}">
+                        <button type="button" style="font-size: 30px; background-color: white;">Login</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'register' %}">
+                        <button type="button" style="font-size: 30px; background-color: white;">Register</button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        </center>
+    </div>
+</body>
+</html>
