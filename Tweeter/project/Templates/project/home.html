@@ -1,0 +1,9 @@
+{% extends "project/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Home Page</h1>
+    <a href="{% url 'logout' %}">
+        <button type="button" class="btn btn-light btn-lg">Logout</button>
+    </a>
+{% endblock content %}
