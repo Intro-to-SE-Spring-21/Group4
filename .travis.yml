@@ -1,14 +1,16 @@
-os: linux
-language: python
+os: linux # => 1
+language: python # => 2
 
-python:
-  - "3.9"
+python: # => 3
+  - "3.6"
+  - "3.7"
+  - "3.8"
   
-env:
+env: # => 5
   - DJANGO=3.1.6  DB=sqlite
   
-install:
+install: # => 6
   - pip install django-crispy-forms
   
-script:
+script: # => 7
   - python manage.py runserver
