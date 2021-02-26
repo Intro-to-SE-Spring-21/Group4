@@ -13,4 +13,4 @@ install: # => 6
   - pip install django-crispy-forms
   
 script: # => 7
-  - python manage.py runserver
+  - python Tweeter/manage.py runserver
