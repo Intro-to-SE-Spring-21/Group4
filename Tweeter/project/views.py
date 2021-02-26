@@ -1,8 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
 from .forms import UserRegisterForm
 from .models import Post
+from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy, reverse
 
 # Create your views here.
 def front(request):
@@ -44,7 +46,14 @@ class PostCreateView(CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.instance.likes = 0
+        #form.instance.likes = 0
         return super().form_valid(form)
+
+def LikeView(request):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('home-page'))
+
+
 
 
