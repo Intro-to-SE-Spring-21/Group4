@@ -21,7 +21,12 @@
                 <p class="article-like">Likes: {{ post.likes.count }}</p>
                 <form action="{% url 'like-post' %}" method = "POST">
                     {% csrf_token %}
+
+                    {% if user in post.likes.all %}
+                    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button>
+                    {% else %}
                     <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+                    {% endif %}
                 </form>
             </div>
         </article>

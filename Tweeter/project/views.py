@@ -27,7 +27,7 @@ def register(request):
 
 def home(request):
     context = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all(),
     }
     return render(request, 'project/home.html', context)
 
@@ -51,7 +51,10 @@ class PostCreateView(CreateView):
 
 def LikeView(request):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
-    post.likes.add(request.user)
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user)
     return HttpResponseRedirect(reverse('home-page'))
 
 
