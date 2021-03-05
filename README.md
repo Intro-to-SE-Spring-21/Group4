@@ -13,27 +13,32 @@ Lucas Roberts (lpr70)
 # Languages and Techniques
 
 Languages:
- -Python 
- -HTML
+
+- Python 
+- HTML
  
 Frameworks:
- -Django
+- Django
  
 Database:
- -SQLite
+- SQLite
  
 Template:
- -Bootstrap
+- Bootstrap
  
 Test:
- -Travis-CI
+- Travis-CI
 
 # Core Feature
 A user can post a "tweet."
+
 A user can like a "tweet."
+
 A user can follow another user.
+
 A user can login or register.
 
 # Extension for Core Feature
 A user can unlike a "tweet."
+
 A user can click on a post to redirect user to a detailed-post page.
