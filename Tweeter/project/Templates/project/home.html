@@ -17,11 +17,16 @@
                     <a class="mr-2" href="#">{{ post.author }}</a>
                     <small class="text-muted">{{ post.date_posted|date:"" }}</small>
                 </div>
-                <a class="article-content"  href="#" style="color: black">{{ post.content}}</a>
+                <a class="article-content"  href="{% url 'post-page' post.id %}" style="color: black">{{ post.content }}</a>
                 <p class="article-like">Likes: {{ post.likes.count }}</p>
                 <form action="{% url 'like-post' %}" method = "POST">
                     {% csrf_token %}
+
+                    {% if user in post.likes.all %}
+                    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button>
+                    {% else %}
                     <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+                    {% endif %}
                 </form>
             </div>
         </article>
