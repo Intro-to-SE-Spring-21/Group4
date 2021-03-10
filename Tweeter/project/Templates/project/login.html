@@ -3,7 +3,7 @@
 
 {% block content %}
     <center>
-    <h1>Login</h1>
+    <h1 style="color: white; font-size: 30px;">Login!</h1>
 
     <div class="content-section">
 
@@ -11,12 +11,12 @@
         <center>
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Login!</legend>
+                <legend class="border-bottom mb-4"></legend>
                 {{ form|crispy }}
             </fieldset>
 
             <div class="form-group">
-                <button class="btn btn-light" type="submit"> Login</button>
+                <button class="btn btn-light" type="submit">Login</button>
             </div>
         </center>
     </form>

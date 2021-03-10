@@ -20,13 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eea15976-d8d9-47ac-bb5a-c1e6cdfd5e55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/static/project/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Templates/project/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/Templates/project/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/Templates/project/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/Templates/project/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/Templates/project/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/Templates/project/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Templates/project/post_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/Templates/project/post_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Templates/project/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/Templates/project/logout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/Templates/project/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/Templates/project/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
