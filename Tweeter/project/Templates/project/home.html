@@ -3,14 +3,19 @@
 
 {% block content %}
     <center>
-    <h1>Home Page</h1>
-    <a href="{% url 'logout' %}">
+        <nav class ="navbar navbar-expand-md navbar-dark fixed-left">
+    <h1 style="color: white; font-size: 45px;">Home Page</h1> &nbsp
+    <a href="{% url 'post-create' %}">
+        <button type="button" class="btn btn-light btn-lg" > Post </button> &nbsp
+    </a>
+
+        <a href="{% url 'logout' %}">
         <button type="button" class="btn btn-light btn-lg">Logout</button>
     </a>
-    <a href="{% url 'post-create' %}">
-        <button type="button" class="btn btn-light btn-lg" > Post </button>
-    </a>
+        </nav>
+
     {% for post in posts %}
+
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
@@ -18,14 +23,16 @@
                     <small class="text-muted">{{ post.date_posted|date:"" }}</small>
                 </div>
                 <a class="article-content"  href="{% url 'post-page' post.id %}" style="color: black">{{ post.content }}</a>
-                <p class="article-like">Likes: {{ post.likes.count }}</p>
+                <br></br>
                 <form action="{% url 'like-post' %}" method = "POST">
                     {% csrf_token %}
 
                     {% if user in post.likes.all %}
-                    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button>
+                    <body><button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button>
+                    Likes: {{ post.likes.count }}</body>
                     {% else %}
-                    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+                    <body><button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+                    Likes: {{ post.likes.count }}</body>
                     {% endif %}
                 </form>
             </div>
