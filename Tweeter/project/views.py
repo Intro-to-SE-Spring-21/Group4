@@ -58,6 +58,9 @@ def LikeView(request):
         post.likes.add(request.user)
     return HttpResponseRedirect(reverse('home-page'))
 
+def Profile(request, pk):
+    return render(request, 'project/profile.html')
+
 
 
 

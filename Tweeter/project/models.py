@@ -17,3 +17,13 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('home-page')
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    following = models.ManyToManyField(User, related_name='Following', blank=True)
+    followers = models.ManyToManyField(User, related_name='Followers', blank=True)
+
+    def __str__(self):
+        return f'{self.user.username} Profile'
+
+
