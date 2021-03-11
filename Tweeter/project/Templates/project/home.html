@@ -19,7 +19,7 @@
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2" href="{% url 'profile-page' post.author.id %}">{{ post.author }}</a>
+                    <a class="mr-2" href="{% url 'profile-page' post.author.profile.id %}">{{ post.author }}</a>
                     <small class="text-muted">{{ post.date_posted|date:"" }}</small>
                 </div>
                 <a class="article-content"  href="{% url 'post-page' post.id %}" style="color: black">{{ post.content }}</a>

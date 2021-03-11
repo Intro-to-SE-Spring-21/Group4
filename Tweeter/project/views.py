@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
 from .forms import UserRegisterForm
-from .models import Post
+from .models import Post, Profile
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 
@@ -58,8 +58,9 @@ def LikeView(request):
         post.likes.add(request.user)
     return HttpResponseRedirect(reverse('home-page'))
 
-def Profile(request, pk):
-    return render(request, 'project/profile.html')
+class ProfileView(DetailView):
+    model = Profile
+    template_name = 'project/profile.html'
 
 
 
