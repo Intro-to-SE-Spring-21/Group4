@@ -20,12 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eea15976-d8d9-47ac-bb5a-c1e6cdfd5e55" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Templates/project/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/Templates/project/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Templates/project/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/Templates/project/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Templates/project/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/Templates/project/logout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Templates/project/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/Templates/project/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Templates/project/post_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/Templates/project/post_page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +75,10 @@
       <option name="presentableId" value="Default" />
       <updated>1613607859204</updated>
       <workItem from="1613766663560" duration="5578000" />
+      <workItem from="1615417574753" duration="4191000" />
+      <workItem from="1615423546732" duration="205000" />
+      <workItem from="1615573531988" duration="1440000" />
+      <workItem from="1615576250243" duration="36000" />
     </task>
     <servers />
   </component>

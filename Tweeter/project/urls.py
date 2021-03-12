@@ -6,6 +6,8 @@ from .views import (
     PostDetailView,
     PostCreateView,
     LikeView,
+    ProfileView,
+    ProfileFollowView,
 )
 
 
@@ -18,4 +20,6 @@ urlpatterns = [
     path('post/<int:pk>/', PostDetailView.as_view(), name = 'post-page'),
     path('post/new/', PostCreateView.as_view(), name = 'post-create'),
     path('like/', LikeView, name = 'like-post'),
+    path('profile/<int:pk>', ProfileView.as_view(), name= 'profile-page'),
+    path('profile/follow/<int:pk>', ProfileFollowView, name = 'follow-user')
 ]
