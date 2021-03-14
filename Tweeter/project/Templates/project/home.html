@@ -3,19 +3,21 @@
 
 {% block content %}
     <center>
+        <!-- Home Page text & Post and Logout Buttons -->
         <nav class ="navbar navbar-expand-md navbar-dark fixed-left">
-    <h1 style="color: white; font-size: 45px;">Home Page</h1> &nbsp
-    <a href="{% url 'post-create' %}">
-        <button type="button" class="btn btn-light btn-lg" > Post </button> &nbsp
-    </a>
+            <h1 style="color: white; font-size: 45px;">Home Page</h1> &nbsp
+            <a href="{% url 'post-create' %}">
+                <button type="button" class="btn btn-light btn-lg" > Post </button> &nbsp
+            </a>
 
-        <a href="{% url 'logout' %}">
-        <button type="button" class="btn btn-light btn-lg">Logout</button>
-    </a>
+            <a href="{% url 'logout' %}">
+                <button type="button" class="btn btn-light btn-lg">Logout</button>
+            </a>
         </nav>
 
     {% for post in posts %}
 
+        <!-- Display posts, posts' author, and the posts' date on the home page -->
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
@@ -27,9 +29,13 @@
                 <form action="{% url 'like-post' %}" method = "POST">
                     {% csrf_token %}
 
+                    <!-- Displays the amount of likes on the post -->
+                    <!-- Displays a like button if user hasn't liked the post yet -->
                     {% if user in post.likes.all %}
                     <body><button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button>
                     Likes: {{ post.likes.count }}</body>
+
+                    <!-- Displays an unlike button if user liked the post -->
                     {% else %}
                     <body><button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
                     Likes: {{ post.likes.count }}</body>

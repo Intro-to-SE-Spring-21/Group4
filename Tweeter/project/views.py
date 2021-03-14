@@ -7,15 +7,19 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 
 
-# Create your views here.
+# List of views
+
+# Front page view
 def front(request):
     return render(request, 'project/front.html')
 
 
+# Login page view
 def login(request):
     return render(request, 'project/login.html')
 
 
+# Register page view
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
@@ -37,6 +41,7 @@ def home(request):
     return render(request, 'project/home.html', context)
 
 
+# Post-list view that displays posts on the home page
 class PostListView(ListView):
     model = Post
     template_name = 'project/home.html'
@@ -44,11 +49,13 @@ class PostListView(ListView):
     ordering = ['-date_posted']
 
 
+# Detailed post view that is shown in the post page
 class PostDetailView(DetailView):
     model = Post
     template_name = 'project/post_page.html'
 
 
+# Post Create View
 class PostCreateView(CreateView):
     model = Post
     fields = ['content']
@@ -59,6 +66,7 @@ class PostCreateView(CreateView):
         return super().form_valid(form)
 
 
+# Like View
 def LikeView(request):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     if post.likes.filter(id=request.user.id).exists():
@@ -68,11 +76,13 @@ def LikeView(request):
     return HttpResponseRedirect(reverse('home-page'))
 
 
+# Profile View
 class ProfileView(DetailView):
     model = Profile
     template_name = 'project/profile.html'
 
 
+# Profile Follow View
 def ProfileFollowView(request, pk):
 
     # currently logged in user

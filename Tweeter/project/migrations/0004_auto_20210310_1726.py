@@ -4,6 +4,7 @@ from django.conf import settings
 from django.db import migrations, models
 
 
+# Django migration stuff
 class Migration(migrations.Migration):
 
     dependencies = [
