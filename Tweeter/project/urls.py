@@ -10,7 +10,7 @@ from .views import (
     ProfileFollowView,
 )
 
-
+# List of urls that redirects user to their desired destination
 urlpatterns = [
     path('', views.front, name = 'front-page'),
     path('login/', auth_views.LoginView.as_view(template_name='project/login.html'), name = 'login'),

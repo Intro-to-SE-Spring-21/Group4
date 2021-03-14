@@ -4,17 +4,21 @@
 {% block content %}
 
 <center>
+        <!-- Displays a detailed view of the post -->
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
                     <a class="mr-2" href="{% url 'profile-page' post.author.profile.id %}">{{ object.author }}</a>
                     <small class="text-muted">{{ object.date_posted|date:"" }}</small>
                 </div>
+
+                <!-- Displays the post and the amount of likes -->
                 <p class="article-content">{{ object.content}}</p>
                 <p class="article-like">Likes: {{ object.likes.count }}</p>
                 <form action="{% url 'like-post' %}" method = "POST">
                     {% csrf_token %}
 
+                    <!-- Users are still able to like/unlike the post in this page-->
                     {% if user in object.likes.all %}
                     <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button>
                     {% else %}

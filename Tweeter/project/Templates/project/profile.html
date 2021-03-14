@@ -2,6 +2,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+
+    <!-- Displays the user's profile -->
     <div class="content-section">
         <div class="media">
             <div class="media-body">
@@ -11,6 +13,8 @@
         </div>
     </div>
 
+    <!-- Displays the amount of followers the user has -->
+    <!-- Displays a Follow and Unfollow button -->
     <form action="{% url 'follow-user' object.pk %}" method = "POST">
             {% csrf_token %}
             {% if user in object.followers.all %}

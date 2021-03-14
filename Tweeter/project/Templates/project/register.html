@@ -3,26 +3,31 @@
 
 {% block content %}
     <center>
-    <h1 style="color: white; font-size: 60px;"><center>Register</center></h1>
+        <h1 style="color: white; font-size: 60px;"><center>Register</center></h1>
 
-    <div class="content-section">
+        <div class="content-section">
 
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Join Today!</legend>
-            {{ form|crispy }}
-        </fieldset>
+            <!-- Displays a form that allows users to create a new account -->
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Join Today!</legend>
+                    {{ form|crispy }}
+                </fieldset>
 
-        <div class="form-group">
-            <button class="btn btn-light" type="submit"> Sign Up </button>
+                <!-- Displays a sign up button for users to create the new account -->
+                <div class="form-group">
+                    <button class="btn btn-light" type="submit"> Sign Up </button>
+                </div>
+            </form>
+
+            <div class="border-top pt-3">
+
+                <!-- Displays a Log in link that redirects user to log in page if user already has an account -->
+                <small class="text-muted">
+                    Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Log In</a>
+                </small>
+            </div>
         </div>
-    </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Log In</a>
-        </small>
-    </div>
-    </div>
     </center>
 {% endblock content %}

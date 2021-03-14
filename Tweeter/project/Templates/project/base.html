@@ -1,6 +1,10 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
+
+  <!-- This HTML document is a base template for other HTML documents -->
+
+  <!-- Required meta tags & Bootstrap CSS -->
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -11,7 +15,10 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'project/main.css' %}">
     <title>Tweeter</title>
+
   </head>
+
+  <!-- Setting the background color of the website to Twitter Blue -->
   <style>
       .base
       {
@@ -19,44 +26,48 @@
       }
 
   </style>
+
   <body class="base">
 
-  <header class="site-header">
+      <!-- Not needed code as of right now
+      <header class="site-header">
 
-      <div class="container">
+          <div class="container">
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
 
-        </button>
-        <div class="collapse navbar-collapse" >
-          <div class="navbar-nav mr-auto">
-            <a class="nav-item nav-link" href="/"></a>
+              </button>
+              <div class="collapse navbar-collapse" >
+                  <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="/"></a>
+                  </div>
+              </div>
+          </div>
+        </nav>
+      </header>
+      -->
+
+      <!-- Display messages depending on certain actions -->
+      <div class="col-md-8">
+          {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+          {% endif %}
+      </div>
+
+      <!-- Aligns the contents to the center of the web page -->
+      <main role="main" class="d-flex justify-content-center" align="center">
+
+          <div class="row">
+            <div>
+              {% block content %}{% endblock %}
+            </div>
           </div>
 
-        </div>
-      </div>
-    </nav>
-  </header>
-  <div class="col-md-8">
-  {% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-            {{ message }}
-        </div>
-    {% endfor %}
-  {% endif %}
-  </div>
-
-  <main role="main" class="d-flex justify-content-center" align="center">
-
-      <div class="row">
-        <div>
-          {% block content %}{% endblock %}
-        </div>
-      </div>
-
-  </main>
-
+      </main>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
