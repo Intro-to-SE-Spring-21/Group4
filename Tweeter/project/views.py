@@ -108,5 +108,12 @@ def ProfileFollowView(request, pk):
     # redirect user to current profile page
     return HttpResponseRedirect(reverse('profile-page', args=[str(pk)]))
 
-
+# Like View
+def LikePostView(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('post-page', args=[str(pk)]))
 

@@ -15,7 +15,7 @@
                 <!-- Displays the post and the amount of likes -->
                 <p class="article-content">{{ object.content}}</p>
                 <p class="article-like">Likes: {{ object.likes.count }}</p>
-                <form action="{% url 'like-post' %}" method = "POST">
+                <form action="{% url 'like-post-page' object.pk %}" method = "POST">
                     {% csrf_token %}
 
                     <!-- Users are still able to like/unlike the post in this page-->
