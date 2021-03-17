@@ -67,7 +67,7 @@ class PostCreateView(CreateView):
 
 
 # Like View
-def LikeView(request):
+def like_view(request):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
@@ -83,7 +83,7 @@ class ProfileView(DetailView):
 
 
 # Profile Follow View
-def ProfileFollowView(request, pk):
+def profile_follow_view(request, pk):
 
     # currently logged in user
     user_profile = get_object_or_404(Profile, id=request.user.profile.id)
@@ -108,8 +108,9 @@ def ProfileFollowView(request, pk):
     # redirect user to current profile page
     return HttpResponseRedirect(reverse('profile-page', args=[str(pk)]))
 
+
 # Like View
-def LikePostView(request, pk):
+def like_post_view(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)

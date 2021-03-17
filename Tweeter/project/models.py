@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 
+
 # each post has content, author, date_posted, likes
 class Post(models.Model):
     content = models.TextField(max_length=200)
@@ -19,6 +20,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('home-page')
+
 
 # each user has a profile to track their followers and who they follow
 class Profile(models.Model):
