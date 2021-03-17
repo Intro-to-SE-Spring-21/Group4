@@ -16,6 +16,10 @@ Languages:
 
 - Python 
 - HTML
+
+Coding Convetions:
+- HTML Coding Convetions
+- PEP 8 (Python Coding Convention)
  
 Frameworks:
 - Django
