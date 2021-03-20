@@ -15,8 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views
+from accounts import views as user_views
+from posts import views as post_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('project.urls')),
+    path('login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='accounts/logout.html'), name='logout'),
+    path('register/', user_views.register, name='register'),
+    path('post/<int:pk>/', post_views.PostDetailView.as_view(), name='post-page'),
+    path('post/new/', post_views.PostCreateView.as_view(), name='post-create'),
+    path('like/', post_views.like_view, name='like-post'),
+    path('post/like/<int:pk>/', post_views.like_post_view, name='like-post-page'),
+    path('profile/<int:pk>', user_views.ProfileView.as_view(), name='profile-page'),
+    path('profile/follow/<int:pk>', user_views.profile_follow_view, name='follow-user')
 ]
