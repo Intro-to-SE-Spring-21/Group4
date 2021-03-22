@@ -7,4 +7,5 @@ from .views import PostListView
 urlpatterns = [
     path('', views.front, name='front-page'),
     path('home/', PostListView.as_view(), name='home-page'),
+    path('search_results', views.search_results, name="search-result")
 ]

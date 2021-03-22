@@ -1,0 +1,72 @@
+{% extends "project/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block navigation %}
+
+
+        <!-- Home Page text & Post and Logout Buttons -->
+        <header>
+            <nav class ="navbar bg-dark">
+                <a href="{% url 'home-page' %}">
+                    <p style="color: #1DA1F2; font-size: 35px;">Home Page</p>
+                </a>
+                <form class="d-flex" method=POST action="{% url 'search-result' %}">
+                    {% csrf_token %}
+
+                    <input class="form-control me-2" type="search" placeholder="Search...." aria-label="Search" name="search"> &nbsp
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+                <div style="float: right">
+                    <a href="{% url 'post-create' %}">
+                        <button type="button" class="btn btn-grey btn-lg" > Post </button> &nbsp
+                    </a>
+
+                    <a href="{% url 'logout' %}">
+                        <button type="button" class="btn btn-grey btn-lg">Logout</button>
+                    </a>
+                </div>
+            </nav>
+        </header>
+{% endblock navigation %}
+    {% block content %}
+        <center>
+            {% if search %}
+
+                {% if not posts %}
+                    <h1>No results!</h1>
+                {% else %}
+                    {% for post in posts %}
+
+                        <!-- Display posts, posts' author, and the posts' date on the home page -->
+                        <article class="media content-section">
+                            <div class="media-body">
+                                <div class="article-metadata">
+                                    <a style="font-size: 20px;" class="mr-2" href="{% url 'profile-page' post.author.profile.id %}">{{ post.author }}</a>
+                                    <small class="text-muted">{{ post.date_posted|date:"" }}</small>
+                                </div>
+                                <a style="font-size: 30px; color: black" class="article-content" href="{% url 'post-page' post.id %}" style="color: black">{{ post.content }}</a>
+                                <br></br>
+                                <form action="{% url 'like-post' %}" method = "POST">
+                                    {% csrf_token %}
+
+                                    <!-- Displays the amount of likes on the post -->
+                                    <!-- Displays a like button if user hasn't liked the post yet -->
+                                    {% if user in post.likes.all %}
+                                    <body><button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button>
+                                    Likes: {{ post.likes.count }}</body>
+
+                                    <!-- Displays an unlike button if user liked the post -->
+                                    {% else %}
+                                    <body><button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+                                    Likes: {{ post.likes.count }}</body>
+                                    {% endif %}
+                                </form>
+                            </div>
+                        </article>
+                    {% endfor %}
+                {% endif %}
+            {% else %}
+                    <h1>You accidentally searched for nothing. </h1>
+            {% endif %}
+        </center>
+    {% endblock content %}

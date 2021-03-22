@@ -25,3 +25,11 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
+
+def search_results(request):
+    if request.method == "POST":
+        search = request.POST['search']
+        posts = Post.objects.filter(content__contains=search)
+        return render(request, 'project/search.html', {'search': search, 'posts': posts})
+    else:
+        return render(request, 'project/home.html', {})
