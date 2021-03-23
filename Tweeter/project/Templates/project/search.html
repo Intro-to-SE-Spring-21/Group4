@@ -1,9 +1,43 @@
 {% extends "project/base.html" %}
 {% load crispy_forms_tags %}
-
 {% block navigation %}
 
+<style>
+    .sidenav {
+  width: 200px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 30; /* Stay at the top */
+  left: 0;
+  padding-top: 2px;
+}
 
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #1DA1F2;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #1DA1F2;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
         <!-- Home Page text & Post and Logout Buttons -->
         <header>
             <nav class ="navbar bg-dark">
@@ -30,6 +64,23 @@
 {% endblock navigation %}
     {% block content %}
         <center>
+            <div class="sidenav bg-dark">
+                <a style="font-size: 15px; color: #1DA1F2;">Users</a>
+                {% if search %}
+                    {% if not users %}
+                    <a style="color: #1DA1F2;">No results!</a>
+                {% else %}
+                    {% for user in users %}
+                        <a style="font-size: 20px;" class="mr-2" href="{% url 'profile-page' user.profile.id %}">{{ user.username }}</a>
+                    {% endfor %}
+
+                {% endif %}
+                {% else %}
+                    <p style="color: #1DA1F2;">Searched for nothing</p>
+                {% endif %}
+            </div>
+
+
             {% if search %}
 
                 {% if not posts %}
@@ -68,5 +119,7 @@
             {% else %}
                     <h1>You accidentally searched for nothing. </h1>
             {% endif %}
+
+
         </center>
     {% endblock content %}
