@@ -42,7 +42,7 @@
         <header>
             <nav class ="navbar bg-dark">
                 <a href="{% url 'home-page' %}">
-                    <p style="color: #1DA1F2; font-size: 35px;">Home Page</p>
+                    <p style="color: white; font-size: 35px;">Tweeter</p>
                 </a>
                 <form class="d-flex" method=POST action="{% url 'search-result' %}">
                     {% csrf_token %}
@@ -51,8 +51,13 @@
                     <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
                 <div style="float: right">
+
                     <a href="{% url 'post-create' %}">
                         <button type="button" class="btn btn-grey btn-lg" > Post </button> &nbsp
+                    </a>
+
+                    <a href="{% url 'profile-page' user.profile.pk %}">
+                        <button type="button" class="btn btn-grey btn-lg" > Profile </button> &nbsp
                     </a>
 
                     <a href="{% url 'logout' %}">
