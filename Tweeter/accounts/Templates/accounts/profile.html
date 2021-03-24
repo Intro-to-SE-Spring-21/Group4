@@ -75,7 +75,7 @@
                 </div>
                 <a style="font-size: 30px; color: black" class="article-content" href="{% url 'post-page' post.id %}" style="color: black">{{ post.content }}</a>
                 <br></br>
-                <form action="{% url 'like-post' %}" method = "POST">
+                <form action="{% url 'like-profile-post-page' object.pk %}" method = "POST">
                     {% csrf_token %}
 
                     <!-- Displays the amount of likes on the post -->
