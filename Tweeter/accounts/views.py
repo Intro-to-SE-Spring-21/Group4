@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import UserRegisterForm
 from django.contrib import messages
-from project.models import Profile
+from project.models import Profile, Post
 from django.views.generic import DetailView
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -32,6 +32,11 @@ def register(request):
 class ProfileView(DetailView):
     model = Profile
     template_name = 'accounts/profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['posts'] = reversed(Post.objects.all())
+        return context
 
 
 # Profile Follow View

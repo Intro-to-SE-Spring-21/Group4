@@ -42,3 +42,13 @@ def like_post_view(request, pk):
     else:
         post.likes.add(request.user)
     return HttpResponseRedirect(reverse('post-page', args=[str(pk)]))
+
+
+# Like View
+def like_profile_post_view(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('profile-page', args=[str(pk)]))
