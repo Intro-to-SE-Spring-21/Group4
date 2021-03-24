@@ -1,8 +1,42 @@
 {% extends "project/base.html" %}
 {% load crispy_forms_tags %}
 
-{% block content %}
+{% block navigation %}
 
+
+        <!-- Home Page text & Post and Logout Buttons -->
+        <header>
+            <nav class ="navbar bg-dark">
+                <a href="{% url 'home-page' %}">
+                    <p style="color: white; font-size: 35px;">Tweeter</p>
+                </a>
+                <form class="d-flex" method=POST action="{% url 'search-result' %}">
+                    {% csrf_token %}
+
+                    <input class="form-control me-2" type="search" placeholder="Search...." aria-label="Search" name="search"> &nbsp
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+                <div style="float: right">
+
+                    <a href="{% url 'post-create' %}">
+                        <button type="button" class="btn btn-grey btn-lg" > Post </button> &nbsp
+                    </a>
+
+                    <a href="{% url 'profile-page' user.profile.pk %}">
+                        <button type="button" class="btn btn-grey btn-lg" > Profile </button> &nbsp
+                    </a>
+
+                    <a href="{% url 'logout' %}">
+                        <button type="button" class="btn btn-grey btn-lg">Logout</button>
+                    </a>
+                </div>
+            </nav>
+        </header>
+{% endblock navigation %}
+
+
+{% block content %}
+    <br/>
     <!-- Displays the user's profile -->
     <div class="content-section">
         <div class="media">

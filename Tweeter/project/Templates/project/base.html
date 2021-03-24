@@ -1,7 +1,14 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-
+<style>
+    article {
+    margin-right: 500px;
+    margin-left: 500px;
+    margin-top: 10px;
+    width: 550px;
+    }
+</style>
   <!-- This HTML document is a base template for other HTML documents -->
 
   <!-- Required meta tags & Bootstrap CSS -->
@@ -46,7 +53,7 @@
         </nav>
       </header>
       -->
-
+      {% block navigation %}{% endblock %}
       <!-- Display messages depending on certain actions -->
       <div class="col-md-8">
           {% if messages %}
