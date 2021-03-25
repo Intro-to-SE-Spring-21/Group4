@@ -25,6 +25,11 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        context['following'] = user.profile.following.all()
+        return context
 
 def search_results(request):
     if request.method == "POST":
