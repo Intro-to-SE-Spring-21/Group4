@@ -1,8 +1,8 @@
-from django.views.generic import DetailView, CreateView
+from django.views.generic import DetailView, CreateView, DeleteView
 from project.models import Post, Comment
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from accounts.forms import CommentForm
 # Create your views here.
 
@@ -66,3 +66,9 @@ class CommentCreateView(CreateView):
         form.instance.name = self.request.user
 
         return super().form_valid(form)
+
+
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = 'posts/delete_post.html'
+    success_url = reverse_lazy('home-page')

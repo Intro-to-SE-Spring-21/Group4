@@ -1,0 +1,54 @@
+{% extends "project/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block navigation %}
+
+
+        <!-- Home Page text & Post and Logout Buttons -->
+<header xmlns="http://www.w3.org/1999/html">
+            <nav class ="navbar bg-dark">
+                <a href="{% url 'home-page' %}">
+                    <p style="color: white; font-size: 35px;">Tweeter</p>
+                </a>
+                <form class="d-flex" method=POST action="{% url 'search-result' %}">
+                    {% csrf_token %}
+
+                    <input class="form-control me-2" type="search" placeholder="Search...." aria-label="Search" name="search"> &nbsp
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+                <div style="float: right">
+
+                    <a href="{% url 'post-create' %}">
+                        <button type="button" class="btn btn-grey btn-lg" > Post </button> &nbsp
+                    </a>
+
+                    <a href="{% url 'profile-page' user.profile.pk %}">
+                        <button type="button" class="btn btn-grey btn-lg" > Profile </button> &nbsp
+                    </a>
+
+                    <a href="{% url 'logout' %}">
+                        <button type="button" class="btn btn-grey btn-lg">Logout</button>
+                    </a>
+                </div>
+            </nav>
+        </header>
+{% endblock navigation %}
+
+{% block content %}
+<br />
+<h1>Delete Post</h1>
+<br/>
+
+
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+
+        <h3><strong>Are you sure you want to delete your post?</strong></h3>
+
+        <br /><br />
+
+        <button class="btn btn-danger">Delete Post</button>
+    </form>
+</div>
+{% endblock content %}
