@@ -31,6 +31,7 @@ class PostListView(ListView):
         context['following'] = user.profile.following.all()
         return context
 
+
 def search_results(request):
     if request.method == "POST":
         search = request.POST['search']
