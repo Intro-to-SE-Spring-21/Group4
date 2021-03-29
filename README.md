@@ -34,15 +34,26 @@ Test:
 - Travis-CI
 
 # Core Feature
+A user can login or register.
+
 A user can post a "tweet."
 
 A user can like a "tweet."
 
 A user can follow another user.
 
-A user can login or register.
-
 # Extension for Core Feature
 A user can unlike a "tweet."
 
 A user can click on a post to redirect user to a detailed-post page.
+
+A user can delete his or her "tweet."
+
+# Additional Feature
+A user has a navbar to navigate the website.
+
+A user can search for a "tweet" and users.
+
+A user can see a list of who he or she is following.
+
+A user can comment on a "tweet."
