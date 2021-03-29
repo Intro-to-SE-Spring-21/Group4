@@ -15,7 +15,7 @@ Lucas Roberts (lpr70)
 Languages:
 
 - Python 
-- HTML
+- HTML/CSS
 
 Coding Convetions:
 - HTML Coding Convetions
