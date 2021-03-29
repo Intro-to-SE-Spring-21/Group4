@@ -35,6 +35,8 @@ class ProfileView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        user = self.request.user
+        context['following'] = user.profile.following.all()
         context['posts'] = reversed(Post.objects.all())
         return context
 
