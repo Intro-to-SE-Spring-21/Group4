@@ -72,6 +72,18 @@
 
 
 {% block content %}
+
+    {% if user == object.user %}
+    <div class="sidenav bg-dark">
+                <a style="font-size: 15px; color: #1DA1F2;">Following</a>
+
+                    {% for user in following %}
+                        <a style="font-size: 20px;" class="mr-2" href="{% url 'profile-page' user.profile.id %}">{{ user.username }}</a>
+                    {% endfor %}
+
+    </div>
+    {% endif %}
+
     <br/>
     <!-- Displays the user's profile -->
     <div class="content-section" style="width: 700px; margin-right: auto; margin-left: auto">
@@ -97,17 +109,6 @@
     </form>
 
     <br/>
-
-    {% if user == object.user %}
-    <div class="sidenav bg-dark">
-                <a style="font-size: 15px; color: #1DA1F2;">Following</a>
-
-                    {% for user in following %}
-                        <a style="font-size: 20px;" class="mr-2" href="{% url 'profile-page' user.profile.id %}">{{ user.username }}</a>
-                    {% endfor %}
-
-    </div>
-    {% endif %}
 
     <p style="color: white; font-size: 35px;">Posts</p>
 
