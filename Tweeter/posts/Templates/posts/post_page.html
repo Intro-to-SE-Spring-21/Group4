@@ -91,7 +91,7 @@
             No Comments Yet...<a href="{% url 'comment-create' post.pk %}"> Add One</a>
         {% else %}
 
-        <a href="{% url 'comment-create' post.pk %}">Add Comment</a>
+        <a style="color: black" href="{% url 'comment-create' post.pk %}">Add Comment...</a>
         </br>
 
             {% for comment in post.comments.all %}
