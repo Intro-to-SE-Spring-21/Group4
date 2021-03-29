@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea15976-d8d9-47ac-bb5a-c1e6cdfd5e55" name="Default Changelist" comment="" />
+    <list default="true" id="eea15976-d8d9-47ac-bb5a-c1e6cdfd5e55" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/posts/Templates/posts/delete_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tweeter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tweeter/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/Templates/posts/post_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/posts/Templates/posts/post_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -66,9 +73,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\elptf\Documents\year4\semester2\se\twiter\Group4\Tweeter\posts\Templates\posts" />
+      <recent name="C:\Users\MC_Python04\Desktop\github\Tweeter\posts\Templates\posts" />
+      <recent name="C:\Users\MC_Python04\Desktop\github\Tweeter\posts\Templates" />
       <recent name="C:\Users\Leon\Desktop\Twitter Clone\Group4\Tweeter\accounts" />
       <recent name="C:\Users\Leon\Desktop\Twitter Clone\Group4\Tweeter\accounts\Templates\accounts" />
-      <recent name="C:\Users\Leon\Desktop\Twitter Clone\Group4\Tweeter\posts\Templates\posts" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -84,6 +93,7 @@
       <workItem from="1615423546732" duration="205000" />
       <workItem from="1615573531988" duration="1440000" />
       <workItem from="1615576250243" duration="36000" />
+      <workItem from="1616867411774" duration="5525000" />
     </task>
     <servers />
   </component>
@@ -101,5 +111,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1616868532912">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup/0.0.2560.1410/2560.210.1920.1050@0.0.2560.1410" timestamp="1616868532912" />
   </component>
 </project>

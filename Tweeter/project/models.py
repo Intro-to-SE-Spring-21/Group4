@@ -32,3 +32,14 @@ class Profile(models.Model):
         return f'{self.user.username} Profile'
 
 
+class Comment(models.Model):
+    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    body = models.TextField()
+    date_added = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return '%s - %s' % (self.post.content, self.name)
+
+    def get_absolute_url(self):
+        return reverse('post-page', args=[str(self.post.id)])

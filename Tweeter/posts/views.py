@@ -1,8 +1,9 @@
-from django.views.generic import DetailView, CreateView
-from project.models import Post
+from django.views.generic import DetailView, CreateView, DeleteView
+from project.models import Post, Comment
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
+from accounts.forms import CommentForm
 # Create your views here.
 
 
@@ -52,3 +53,22 @@ def like_profile_post_view(request, pk):
     else:
         post.likes.add(request.user)
     return HttpResponseRedirect(reverse('profile-page', args=[str(pk)]))
+
+
+# Comment View
+class CommentCreateView(CreateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'posts/add_comment.html'
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        form.instance.name = self.request.user
+
+        return super().form_valid(form)
+
+
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = 'posts/delete_post.html'
+    success_url = reverse_lazy('home-page')

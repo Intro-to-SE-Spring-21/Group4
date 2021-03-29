@@ -5,7 +5,7 @@
 
 
         <!-- Home Page text & Post and Logout Buttons -->
-        <header>
+<header xmlns="http://www.w3.org/1999/html">
             <nav class ="navbar bg-dark">
                 <a href="{% url 'home-page' %}">
                     <p style="color: white; font-size: 35px;">Tweeter</p>
@@ -47,18 +47,64 @@
 
                 <!-- Displays the post and the amount of likes -->
                 <p style="font-size: 30px;" class="article-content">{{ object.content}}</p>
+
                 <p class="article-like">Likes: {{ object.likes.count }}</p>
+
+
+                <!-- Check if the current user is the author of the post. If so show delete button-->
+                    <!-- Otherwise do not show delete post button -->
+
+
                 <form action="{% url 'like-post-page' object.pk %}" method = "POST">
                     {% csrf_token %}
 
                     <!-- Users are still able to like/unlike the post in this page-->
                     {% if user in object.likes.all %}
                     <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button>
+                    {% if user.profile.user == object.author %}
+
+                    <a href="{% url 'delete-post' object.pk %}">
+                            <button type="button" class="btn btn-danger btn-sm">Delete Post</button>
+                    </a>
+
+                    {%endif%}
                     {% else %}
                     <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+                    {% if user.profile.user == object.author %}
+
+                    <a href="{% url 'delete-post' object.pk %}">
+                            <button type="button" class="btn btn-danger btn-sm">Delete Post</button>
+                    </a>
+
+                    {%endif%}
                     {% endif %}
                 </form>
+
+
             </div>
         </article>
+
+        <h2>Comments...</h2>
+        </br>
+
+        {% if not post.comments.all %}
+            No Comments Yet...<a href="{% url 'comment-create' post.pk %}"> Add One</a>
+        {% else %}
+
+        <a href="{% url 'comment-create' post.pk %}">Add Comment</a>
+        </br>
+
+            {% for comment in post.comments.all %}
+            <article class="media content-section">
+                <strong>
+                {{ comment.name }} -
+                {{ comment.date_added }}
+                </strong>
+                </br>
+                {{ comment.body }}
+            </article>
+            {% endfor %}
+        {% endif %}
+
 </center>
 {% endblock content %}
