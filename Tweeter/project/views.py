@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 # List of views
 
+
 # Front page view
 def front(request):
     return render(request, 'project/front.html')
