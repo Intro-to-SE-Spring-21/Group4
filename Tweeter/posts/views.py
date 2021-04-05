@@ -4,16 +4,20 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from accounts.forms import CommentForm
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
 # Detailed post view that is shown in the post page
+@method_decorator(login_required, name='dispatch')
 class PostDetailView(DetailView):
     model = Post
     template_name = 'posts/post_page.html'
 
 
 # Post Create View
+@method_decorator(login_required, name='dispatch')
 class PostCreateView(CreateView):
     model = Post
     fields = ['content']
@@ -56,6 +60,7 @@ def like_profile_post_view(request, pk):
 
 
 # Comment View
+@method_decorator(login_required, name='dispatch')
 class CommentCreateView(CreateView):
     model = Comment
     form_class = CommentForm

@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from .models import Post
 from django.contrib.auth.models import User
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 # List of views
 
@@ -20,6 +22,7 @@ def home(request):
 
 
 # Post-list view that displays posts on the home page
+@method_decorator(login_required, name='dispatch')
 class PostListView(ListView):
     model = Post
     template_name = 'project/home.html'
