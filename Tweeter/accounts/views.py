@@ -5,6 +5,8 @@ from project.models import Profile, Post
 from django.views.generic import DetailView
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -29,6 +31,7 @@ def register(request):
 
 
 # Profile View
+@method_decorator(login_required, name='dispatch')
 class ProfileView(DetailView):
     model = Profile
     template_name = 'accounts/profile.html'

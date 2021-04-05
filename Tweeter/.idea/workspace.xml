@@ -73,6 +73,72 @@
       <recent name="C:\Users\Leon\Desktop\Twitter Clone\Group4\Tweeter\accounts\Templates\accounts" />
     </key>
   </component>
+  <component name="RunManager" selected="Python tests.Unittests for test_urls.TestUrls.test_front_url_is_resolved">
+    <configuration name="Unittests for test_urls.TestUrls.test_front_url_is_resolved" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Tweeter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_urls.TestUrls.test_front_url_is_resolved&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_views.TestViews" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Tweeter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_views.TestViews&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_views.TestViews.test_login" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Tweeter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_views.TestViews.test_login&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_views.TestViews.test_profile_view" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Tweeter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_views.TestViews.test_profile_view&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Unittests for test_urls.TestUrls.test_front_url_is_resolved" />
+        <item itemvalue="Python tests.Unittests for test_views.TestViews" />
+        <item itemvalue="Python tests.Unittests for test_views.TestViews.test_login" />
+        <item itemvalue="Python tests.Unittests for test_views.TestViews.test_profile_view" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -87,6 +153,7 @@
       <workItem from="1615573531988" duration="1440000" />
       <workItem from="1615576250243" duration="36000" />
       <workItem from="1616867411774" duration="5525000" />
+      <workItem from="1617228414493" duration="305000" />
     </task>
     <servers />
   </component>
@@ -104,11 +171,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1616868532912">
-      <screen x="0" y="0" width="2560" height="1410" />
-    </state>
-    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup/0.0.2560.1410/2560.210.1920.1050@0.0.2560.1410" timestamp="1616868532912" />
   </component>
 </project>
